@@ -16,7 +16,7 @@ drc/lvs/pex
 * Open the cell view window by clicking on the desired library and cell view name in the schematic editor.
 * For placing an instance in the schematic, press `i` and select names of library, cell and view.
 * Place the instance in the schematic/layout window and then press `done` in the instance pop-up window.
-  - (**NOTE** - *First place the instance then press done not before placing*)
+  - (**NOTE** - *First place the instance, then press done. Done not to be clicked before placing*)
 * The ports and wire are present in the icon panel and can be used when clicked on the icon once.
 * For knowing the properties of the instance, click on the instance and the properties appear on the right side panel.
 
