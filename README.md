@@ -16,7 +16,7 @@ drc/lvs/pex
 * Open the cell view window by clicking on the desired library and cell view name in the schematic editor.
 * For placing an instance in the schematic, press `i` and select names of library, cell and view.
 * Place the instance in the schematic/layout window and then press `done` in the instance pop-up window.
-  (**NOTE** - *First place the instance then press done not before placing*)
+  - (**NOTE** - *First place the instance then press done not before placing*)
 * The ports and wire are present in the icon panel and can be used when clicked on the icon once.
 * For knowing the properties of the instance, click on the instance and the properties appear on the right side panel.
 
@@ -30,7 +30,7 @@ drc/lvs/pex
 
 # Generating a layout from a schematic
 * In the layout editor, the library name under which the schematic has been designed will appear but the cell name would not appear.
-* Create a cell following the steps mentioned above [Creating a new cell](#Creating-a-new-cell-in-the-library) with the **same name as in schematic window**.
+* Create a cell following the steps mentioned above [Creating a new cell](#Creating-a-new-cell-in-the-library) with the **Same Name as in Schematic Window**.
 * In the schematic editor, click on the `Publish to SDL` icon from the icon menu.
 * In the layout editor, the cell whose layout has to be generated has to be selected and the layout appears.
 
