@@ -37,6 +37,8 @@ drc/lvs/pex
 # DRC/LVS (Calibre on Local Linux Host)
 **NOTE** The following instructions are for running Calibre on the Linux host. To run verification on Windows, a SSH tunnel to the Linux host has to be created using PuTTy and a network drive has to be setup to share between the Windows and Linux host. 
 
+* Create a folder each for DRC, LVS and PEX in your project directory.
+
 ## DRC
   * Setup the server and path to Calibre. Click the **Settings** button (Spanner icon) next to `Calibre Toolbar (DRC/LVS/PEX/RVE/Settings)`:
     * For the host enter: `192.168.6.50`
