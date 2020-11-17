@@ -37,8 +37,12 @@ drc/lvs/pex
 # DRC/LVS (Calibre on Local Linux Host)
 **NOTE** The following instructions are for running Calibre on the Linux host. To run verification on Windows, a SSH tunnel to the Linux host has to be created using PuTTy and a network drive has to be setup to share between the Windows and Linux host. 
 
-* Create a folder each for DRC, LVS and PEX in your project directory.
+* Create a folder each for DRC, LVS and PEX in your project directory. All the files generated while running DRC,LVS and PEX checks along with the runset files will be saved in their respective folders to make things cleaner and easily accessible.
+```bash
+cd ../YourProjectDirectory/
+mkdir {DRC,LVS,PEX}
 
+```
 ## DRC
   * Setup the server and path to Calibre. Click the **Settings** button (Spanner icon) next to `Calibre Toolbar (DRC/LVS/PEX/RVE/Settings)`:
     * For the host enter: `192.168.6.50`
@@ -54,7 +58,7 @@ drc/lvs/pex
   * Click `Inputs` and setup the inputs but the defaults should be Ok eg. GDSII/Export from Layout Viewer
   * Click `Outputs` and the defaults should be fine.
   * If none of the left panel buttons are red, click **Run DRC**
-  * If the run was successful, save the GUI settings to a file by clicking `File->Save Runset` which can be loaded the next time.
+  * If the run was successful, save the GUI settings to a file by clicking `File->Save Runset` in the DRC folder created before which can be loaded the next time.
 
 ## LVS
   * In L-Edit, click **Run Calibre LVS** from the Calibre toolbar which will launch the GUI.
@@ -62,12 +66,14 @@ drc/lvs/pex
   * In the GUI, click the **Rules** button in the left Panel and enter the following info:
     * `LVS Rules File`: Browse to the Calibre rule file eg.
       * `$XFAB_CALIBRE_RUNSET/xt018_1243`
-    * `LVS Run Directory`: Ideally `$PROJDIR/DRC`
+    * `LVS Run Directory`: Ideally `$PROJDIR/LVS`
   * Click **Inputs** and set up the **Run**, **Step**, and **Layout** tab information. Settings may be  correct by default:
     * Select **Layout vs Netlist** from the Step dropdown menu.
     * Enable **Export from layout viewer** on the **Layout** tab.
     * Select **GDSII** in the Format dropdown list.
   * Click the **Netlist** tab on the `Inputs` pane to set up schematic (source) input.
-    * Enable **Export from schematic viewer**. **NOTE**: If you want to LVS with netlist from another cell, open that cell in S-Edit and it will netlist that cell. If a netlist exists and you to LVS wrt that netlist then deselect that this button.
+    * Enable **Export from schematic viewer**. **NOTE**: If you want to LVS with netlist from another cell, open that cell in S-Edit and it will netlist that cell. If a netlist exists and you want to LVS wrt that netlist then deselect that this button.
     * Select **SPICE** from the Format dropdown list.
   * Click **Outputs** and enable **View Extraction Report** after LVS finishes and Start RVE after LVS finishes.
+  * Click **Run LVS**.
+  * If the run was successful, save the GUI settings to a file by clicking `File->Save Runset` in the LVS folder created before which can be loaded the next time.
