@@ -79,4 +79,4 @@ mkdir {DRC,LVS,PEX}
   * If the run was successful, save the GUI settings to a file by clicking `File->Save Runset` in the LVS folder created before which can be loaded the next time.
   
   # Examples
-  ## Two-terminal device - Resistor
+  ## Two-terminal device - [Resistor](https://github.com/prachi-mrudula/verification/tree/main/Resistor)
