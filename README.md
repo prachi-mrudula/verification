@@ -39,7 +39,7 @@ drc/lvs/pex
 
 * Create a folder each for DRC, LVS and PEX in your project directory. All the files generated while running DRC,LVS and PEX checks along with the runset files will be saved in their respective folders to make things cleaner and easily accessible.
 ```bash
-cd ../YourProjectDirectory/
+cd /../YourProjectDirectory/
 mkdir {DRC,LVS,PEX}
 
 ```
@@ -77,3 +77,6 @@ mkdir {DRC,LVS,PEX}
   * Click **Outputs** and enable **View Extraction Report** after LVS finishes and Start RVE after LVS finishes.
   * Click **Run LVS**.
   * If the run was successful, save the GUI settings to a file by clicking `File->Save Runset` in the LVS folder created before which can be loaded the next time.
+  
+  # Examples
+  ## Two-terminal device - Resistor
