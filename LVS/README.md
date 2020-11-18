@@ -21,10 +21,10 @@ calibre [ -lvs [ [ { -tl || -ts } cnet_file_name ][ -nonames ] [ -cell ][ -dblay
 ``` bash
 calibre -spice <spice_file> <rulefile>
 ```
-** `-spice` command extracts the netlist from the layout.
-** `<spice_file>` is the name of the file with extension as .net or .sp where the generated netlist from the layout will be stored.
-** `<rulefile>` is the ruledeck file name that is to be used.(Layout system is GDSII)
-** As an example, let the LVS is being run a file named 'res_test' and `_xt018_1243_` is the rule file. 
+* `-spice` command extracts the netlist from the layout.
+* `<spice_file>` is the name of the file with extension as .net or .sp where the generated netlist from the layout will be stored.
+* `<rulefile>` is the ruledeck file name that is to be used.(Layout system is GDSII)
+* As an example, let the LVS is being run a file named 'res_test' and `_xt018_1243_` is the rule file. 
 ``` bash
 /CAD/mentor/calibre/2020-2-14-12/aoi_cal_2020.2_14.12/bin/calibre -spice res_test.net _xt018_1243_
 ```
