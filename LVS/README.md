@@ -24,10 +24,14 @@ calibre -spice <spice_file> <rulefile>
 * `-spice` command extracts the netlist from the layout.
 * `<spice_file>` is the name of the file with extension as .net or .sp where the generated netlist from the layout will be stored.
 * `<rulefile>` is the ruledeck file name that is to be used.(Layout system is GDSII)
-* As an example, let the LVS is being run a file named 'res_test' and `_xt018_1243_` is the rule file. 
+* As an example, let the LVS is being run a file named 'res_test' and `_xt018_1243_` is the rule file. This is run in the same path where the rule file is present.
 ``` bash
 /CAD/mentor/calibre/2020-2-14-12/aoi_cal_2020.2_14.12/bin/calibre -spice res_test.net _xt018_1243_
 ```
+* The netlist for the example 'res_test' which consists of a polyresistor(rnp1) as generated in the res_test.net:
+` .SUBCKT res_test A B
+  R0 A B L=1e-05 W=2e-06 $[rnp1] $X=-1025 $Y=-1525 $D=122
+  .ENDS`
 * Then, the netlists of both the source(schematic) and the layout are compared.
 * General format:
 ``` bash
