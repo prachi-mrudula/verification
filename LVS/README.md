@@ -8,9 +8,12 @@ The LVS verification is done in Calibre using a SVRF(Standard Verification Rule 
 2. Layout Database: The extracted netlist from layout and its related information is contained here.
 3. Source Database: Contains the netlist of schematic(source) in SPICE and its related informations.
 ## Rule file
-This is further classified into 2 types: 
-1. Specification statements: Used to define layout and source databases, paths to output files and set the working environment for the process. 
-2. Layer operations: Provides the layer data by performing operations on them thus deriving the layer informations.
+* This is further classified into 2 types: 
+  1. Specification statements: Used to define layout and source databases, paths to output files and set the working environment for the process. 
+  2. Layer operations: Provides the layer data by performing operations on them thus deriving the layer informations.
+* A simple diagram to depict the structure of the rule files in Calibre is given below:
+![rule_file_struc](https://drive.google.com/file/d/1I8omivaoVvA43oEBT1AVn3k1ef_yqRVH/view?usp=sharing)
+  1. `_xt018_1243_` : A template has been provided (1strulefile)[]
 ## Command Line LVS( nmLVS and nmLVS-H)
 * General format for running LVS:
 ``` bash
