@@ -16,8 +16,8 @@ This is further classified into 2 types:
 ``` bash
 calibre [ -lvs [ [ { -tl || -ts } cnet_file_name ][ -nonames ] [ -cell ][ -dblayers "name1,..." ][ -bpf [ no-extents ] ] [ -nl ] [ -cb ]] || [ -hier [ -automatch || -genhcells[=qs_tcl_file_name] ] || -flatten][ -ixf ] [ -nxf ]] 
 ```
-* Firstly, layout netlist has to be extracted and stored in a file for LVS comparison between netlists.
-** General format:
+- Firstly, layout netlist has to be extracted and stored in a file for LVS comparison between netlists.
+  - General format:
 ``` bash
 calibre -spice <spice_file> <rulefile>
 ```
@@ -29,14 +29,14 @@ calibre -spice <spice_file> <rulefile>
 /CAD/mentor/calibre/2020-2-14-12/aoi_cal_2020.2_14.12/bin/calibre -spice res_test.net _xt018_1243_
 ```
 * Then, the netlists of both the source(schematic) and the layout are compared.
-** General format:
+  * General format:
 ``` bash
 calibre -lvs -hier <rulefile>
 ```
-** `-lvs` performs the lvs comparison and can be used with variable options.
-** `-hier` is used with -lvs option to compare the netlists hierarchically.
-** `<rulefile>` is the ruledeck file name that is to be used.(Layout system is GDSII)
-** As an example, the LVS is being run a file named 'res_test' and `_xt018_1243_` is the rule file. 
+  * `-lvs` performs the lvs comparison and can be used with variable options.
+  * `-hier` is used with -lvs option to compare the netlists hierarchically.
+  * `<rulefile>` is the ruledeck file name that is to be used.(Layout system is GDSII)
+  * As an example, the LVS is being run a file named 'res_test' and `_xt018_1243_` is the rule file. 
 ``` bash
 /CAD/mentor/calibre/2020-2-14-12/aoi_cal_2020.2_14.12/bin/calibre -lvs -hier _xt018_1243_
 ```
