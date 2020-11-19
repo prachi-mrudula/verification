@@ -54,6 +54,30 @@ calibre -lvs -hier <rulefile>
 * `-nowait` 
 ## Output Files
 * The output files that are generated after running the LVS are:
-1. `lvs.summary` : It is the LVS Summary report which contains extraction and LVS comparison information like:
-   * ndfbv
+1. `netlistLAYOUT` : This filename is specified in the rulefile as " LVS WRITE LAYOUT NETLIST : netlistLAYOUT ". It contains the netlist of the layout and is mainly used for debugging purposes.
+2. `netlistSOURCE` : This filename is specified in the rulefile as " LVS WRITE SOURCE NETLIST : netlistSOURCE ". It contains the netlist of the schematic and is mainly used for debugging purposes.
+3. `lvs.summary` : It is the LVS Summary report which contains extraction and LVS comparison information like:
+   * Start time and finish time of extraction and comparison.
+   * Extraction and comparison report file names : `cellname.lvs.report.ext` and `cellname.lvs.report` respectively
+   * Extracted SPICE Netlist path and file name : `cellname.sp`
+   * LVS comparison status (correct/incorrect)  
+4. `cellname.lvs.report.ext` : It is the circuit extraction report file which contains the following info:
+   * Report file name : cellname.lvs.report
+   * Layout name: cellname.calibre.db (layout database)
+   * Creation time            
+   * Current directory         
+   * User name              
+   * Calibre version
+5. `cellname.lvs.report` : It is the LVS report file which in addition to the info mentioned in cellname.lvs.report.ext has the following data:
+   * Source name: cellname.src.net
+   * Rule file and rule file title
+   * Overall comparison results
+   * Cell summary
+   * LVS parameters
+   * Cell comparison results
+   * Information and warnings
+   * Summary
+   
+
+
 
