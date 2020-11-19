@@ -31,7 +31,8 @@ calibre -spice <spice_file> <rulefile>
 * The netlist for the example 'res_test' which consists of a polyresistor(rnp1) as generated in the res_test.net:
 ``` bash
 .SUBCKT res_test A B
- R0 A B L=1e-05 W=2e-06 $[rnp1] $X=-1025 $Y=-1525 $D=122
+** N=4 EP=2 IP=0 FDC=1
+R0 A B L=1e-05 W=2e-06 $[rnp1] $X=-1025 $Y=-1525 $D=122
 .ENDS
 ```
 * Then, the netlists of both the source(schematic) and the layout are compared.
