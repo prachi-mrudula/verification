@@ -1,0 +1,62 @@
+//    This rule file is given as an input to the commands for running LVS (both while generating netlists and performing LVS Comparison).
+//    The text with "" : data has to be provided by the user
+
+
+LAYOUT PATH  "cellname.calibre.db"     // The layout database is stored here after exporting all the information from layout
+LAYOUT PRIMARY "cellname"              // The top-level cell name in layout data
+LAYOUT SYSTEM GDSII                    // The format in which the layout database is stored. Can be GDSII, OASIS, OPENACCESS, LEFDEF, MILKYWAY, ASCII, Binary, SPICE, CNET 
+
+
+SOURCE PATH "/../cellname.src.net"     // Points to the extracted netlist from the schematic or the source database  
+SOURCE PRIMARY "cellname"              // The top-level cell name in schematic data
+SOURCE SYSTEM SPICE                    // The format in which the schematic database(netlist) is stored. Can be SPICE or CNET database 
+
+MASK SVDB DIRECTORY "svdb" QUERY       //Creates a Standard Verification Database Directory (SVDB). The QUERY option creates information of 
+                                       //      a)persistent hierarchical database (PHDB) with layout shapes and layout connectivity and device information called layout_primary.phdb.
+                                       //      b)binary cross-reference database(XDB)-layout_primary.xdb contains cross-reference information between layout and source elements when performing LVS Comparison.
+                                       //      c)Discrepancy Viewer database(DV) for LVS discrepancy viewer. This is a text file called layout_primary.dv.
+
+LVS REPORT "cellname.lvs.report"       //The report file containing all detailed information of the comparison done between netlists.
+
+LVS SUMMARY REPORT "lvs.summary"       //The summary file providing information on extraction and comparison results.
+LVS REPORT OPTION NONE                 //Controls the level of detail and contents of an LVS Report. The option 'None' refers to the default LVS report generated. Many other keywords can be used to describe the lvs report.
+
+//Controls the filtering of unused devices.
+LVS FILTER UNUSED OPTION NONE SOURCE   
+LVS FILTER UNUSED OPTION NONE LAYOUT
+LVS REPORT MAXIMUM 50                  //Specifies an upper limit on the number of items that LVS prints out in various sections of its report. A number or ALL can also be used. 
+
+LVS RECOGNIZE GATES ALL                //Specifies whether to recognize logic gates from transistor-level data.
+                                       // Can be : a)ALL: all gates are recognised, b)SIMPLE: simple gates only, c)NONE: no gates
+
+LVS ABORT ON SOFTCHK NO                //Specifies whether to abort processing if an LVS Softchk violation is found.
+LVS ABORT ON SUPPLY ERROR YES          //Specifies whether to abort processing when connectivity extraction detects a problem with the power or ground nets
+LVS IGNORE PORTS NO                    //Instructs whether ports are to be compared while performing LVS Comparison.
+LVS SHOW SEED PROMOTIONS NO            //Specifies whether instances of devices formed by interaction of polygons from different level of hierarchy are reported in a file.
+LVS SHOW SEED PROMOTIONS MAXIMUM 50    //Specifies the maximum number of polygons that appear in any check performed by the LVS Show Seed Promotions statement.
+
+
+LVS ISOLATE SHORTS NO                  //Shorts occur when conflicting text objects on the same net are detected during circuit extraction. The statement decides if these are to be written to the database.
+
+
+VIRTUAL CONNECT COLON NO               //Specifies identical net names containing a colon (:) to be virtually connected.
+VIRTUAL CONNECT REPORT NO              //Directs all Calibre and ICverify applications to report a warning or a note when a virtual connection is made by the connectivity extractor.
+
+
+LVS EXECUTE ERC YES                    //Specifies whether ERC operations are executed during the circuit extraction phase.
+ERC RESULTS DATABASE "res_test.erc.results"                  //Specifies the pathname of the ERC results database.
+ERC SUMMARY REPORT "res_test.erc.summary" REPLACE HIER       //Specifies the report filename and writing method for ERC. Used as:
+                                                             // a)REPLACE: Overwrites the previous contents of the summary file, if any, each time you run ERC
+                                                             // b)APPEND: Appends to an existing summary report file.
+                                                             // HIER:- Creates a section in the summary report that lists non-empty rule check statistics by layout database cell
+
+ERC CELL NAME YES CELL SPACE XFORM                           //Specifies whether to append the cell name associated with each ERC result to its signature line in an ASCII ERC results database
+ERC MAXIMUM RESULTS 1000                                     //Specifies the maximum number of results for an individual rule check in ERC.
+ERC MAXIMUM VERTEX 4096                                      //Specifies the maximum vertex count of any ERC result polygon written to the ERC results database.
+
+
+DRC ICSTATION YES
+
+
+INCLUDE "/../..path to the 2nd rule file(xt018_1243)"
+
