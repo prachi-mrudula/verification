@@ -29,9 +29,11 @@ calibre -spice <spice_file> <rulefile>
 /CAD/mentor/calibre/2020-2-14-12/aoi_cal_2020.2_14.12/bin/calibre -spice res_test.net _xt018_1243_
 ```
 * The netlist for the example 'res_test' which consists of a polyresistor(rnp1) as generated in the res_test.net:
-` .SUBCKT res_test A B
-  R0 A B L=1e-05 W=2e-06 $[rnp1] $X=-1025 $Y=-1525 $D=122
-  .ENDS`
+``` bash
+.SUBCKT res_test A B
+ R0 A B L=1e-05 W=2e-06 $[rnp1] $X=-1025 $Y=-1525 $D=122
+.ENDS
+```
 * Then, the netlists of both the source(schematic) and the layout are compared.
 * General format:
 ``` bash
