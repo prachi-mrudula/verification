@@ -54,7 +54,7 @@ calibre -lvs -hier <rulefile>
 ``` bash
 /CAD/mentor/calibre/2020-2-14-12/aoi_cal_2020.2_14.12/bin/calibre -spice /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/LVS/res_test.sp -lvs -hier -nowait /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/LVS/_xt018_1243_
 ```
-* `-nowait` 
+* `-nowait` :- specifies that waiting time /queuing time to obtain a license is 0.
 ## Output Files
 * The output files that are generated after running the LVS are:
 1. `netlistLAYOUT` : This filename is specified in the rulefile as " LVS WRITE LAYOUT NETLIST : netlistLAYOUT ". It contains the netlist of the layout and is mainly used for debugging purposes.
