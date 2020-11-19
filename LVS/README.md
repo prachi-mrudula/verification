@@ -12,8 +12,8 @@ The LVS verification is done in Calibre using a SVRF(Standard Verification Rule 
   1. Specification statements: Used to define layout and source databases, paths to output files and set the working environment for the process. 
   2. Layer operations: Provides the layer data by performing operations on them thus deriving the layer informations.
 * A simple diagram to depict the structure of the rule files in Calibre is given below:
-![rule_file_struc](https://drive.google.com/file/d/1I8omivaoVvA43oEBT1AVn3k1ef_yqRVH/view?usp=sharing)
-  1. `_xt018_1243_` : A template has been provided (1strulefile)[]
+![rule_file_struc](https://drive.google.com/file/d/1I8omivaoVvA43oEBT1AVn3k1ef_yqRVH/view?raw=true)
+  1. `_xt018_1243_` : A template has been provided (1strulefile)[https://github.com/prachi-mrudula/verification/blob/main/LVS/_xt018_1243_temp]
 ## Command Line LVS( nmLVS and nmLVS-H)
 * General format for running LVS:
 ``` bash
