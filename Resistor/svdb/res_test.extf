@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1606197255 1606197255
+lvs_ExtOutFile RUNDIR /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/verification/Resistor
+lvs_ExtOutFile RULES_FILE inuptregrule
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST svdb/res_test.sp
+lvs_ExtOutFile EXTRACTION_REPORT res_test.lvs.report.ext
