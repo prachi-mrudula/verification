@@ -26,8 +26,10 @@ The LVS verification is done in Calibre using a SVRF(Standard Verification Rule 
    * `TEXTTYPE`: This maps text layer objects.
    * `source_type`: It specifies a particular datatype or texttype in the layout database.
    * `target_layer`: It specifies the layer number to be used by Calibre. 
- * TEXT LAYER : Specifies the layers in the layout database from which text is read for connectivity extraction. The connectivity extractor uses only those text objects having layers that appear in Text Layer specification statements. Thus, if there are no Text Layer specification statements in the rule file, then no layout database text objects are used by the connectivity extractor, and there will be no net names assigned from such objects. 
-
+* TEXT LAYER : Specifies the layers in the layout database from which text is read for connectivity extraction. The connectivity extractor uses only those text objects having layers that appear in Text Layer specification statements. Thus, if there are no Text Layer specification statements in the rule file, then no layout database text objects are used by the connectivity extractor, and there will be no net names assigned from such objects. 
+* PORT LAYER TEXT : Causes Port Layer Text objects on the specified layer(s) to be read and treated as top-level ports in geometric databases. Its object names in the top-level cell are output by the SPICE netlister(calibre -spice) as top-level subcircuit pin names. Port text objects can be attached to port shapes using explicit attachment (Attach), implicit attachment (both port text and port shapes are on the same Connect layer), or free attachment(Label Order).
+* ATTACH : attaches connectivity information from a layer1 object to a layer2 object. It is used for naming nets and ports. It transfers connectivity information from a specified original database source layer (a text layer) to a specified original or derived target layer that appears in a Connect or Sconnect operation. Most often, Attach is used when there is a single text layer (or a few text layers) that is used for label assignment throughout the design. Format:- `ATTACH A B`, where `A` is a Text Layer argument (or A is a layer set that contains the label layer), then the connectivity extractor looks for a polygon on layer `B` that intersects the label location. If found, the label name is assigned to the net that contains that polygon.
+* 
 ## Command Line LVS( nmLVS and nmLVS-H)
 * General format for running LVS:
 ``` bash
