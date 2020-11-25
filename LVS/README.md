@@ -17,9 +17,17 @@ The LVS verification is done in Calibre using a SVRF(Standard Verification Rule 
   2. `xt018_1243` : A template has been provided [rulefile2](https://github.com/prachi-mrudula/verification/blob/main/LVS/xt018_1243_temp)
   3. `xt018.rul` : This is the main rule file containing all the layer and device definitions, layer operations, rule checks, connectivity information and setup defaults. Information on the commands used are provided in the next section.
 ### Commands used in rule file:
-* LAYER: Defines the name of an original layer or a layer set that Calibre uses. Format:- `LAYER name original_layer` 
-   * where, `name`: A required name for an original layer or layer set.
-           * `original_layer`: The layer number of an original layer.   
+* LAYER: Defines the name of an original layer or a layer set that Calibre uses. Format:- `LAYER name original_layer` where,
+   * `name`: A required name for an original layer or layer set. 
+   * `original_layer`: The layer number of an original layer. 
+* LAYER MAP: Enables Calibre to map layer numbers, DATATYPE attributes, and TEXTTYPE attributes in GDS and OASIS databases to layer numbers that Calibre uses in the rule file. Format: `LAYER MAP source_layer DATATYPE/TEXTTYPE source_type target_layer`
+   * `source_layer` : The layer number in layout database for mapping.
+   * `DATATYPE`: This maps drawn geometric layers.
+   * `TEXTTYPE`: This maps text layer objects.
+   * `source_type`: It specifies a particular datatype or texttype in the layout database.
+   * `target_layer`: It specifies the layer number to be used by Calibre. 
+ * TEXT LAYER : Specifies the layers in the layout database from which text is read for connectivity extraction. The connectivity extractor uses only those text objects having layers that appear in Text Layer specification statements. Thus, if there are no Text Layer specification statements in the rule file, then no layout database text objects are used by the connectivity extractor, and there will be no net names assigned from such objects. 
+
 ## Command Line LVS( nmLVS and nmLVS-H)
 * General format for running LVS:
 ``` bash
