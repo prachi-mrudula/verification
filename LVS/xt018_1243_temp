@@ -1,0 +1,15 @@
+
+TITLE "XT018_1243 Calibre DRC/LVS File : LP5MOS / MET4 / METMID / METTHK"
+// DEFINE:- defines variables in the SVRF rule file. The variables are used to control conditional execution of portions of the rule file.
+// UNDEFINE:- undefines variables. If used to undefine a variable defined in the shell, the var_name should have an initial dollar sign ($).
+
+#DEFINE LP5MOS
+#DEFINE METAL3
+#DEFINE METAL4
+#UNDEFINE METAL5
+#UNDEFINE METAL6
+#DEFINE MIDMET
+#DEFINE THKMET
+#UNDEFINE XFAB_IP_BBOX_ANTENNA
+INCLUDE "../path to main rule file/xt018.rul"
+
