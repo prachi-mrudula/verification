@@ -14,7 +14,7 @@ The LVS verification is done in Calibre using a SVRF(Standard Verification Rule 
 * A simple diagram to depict the structure of the rule files in Calibre is given below:
 ![rule_file_struc](https://github.com/prachi-mrudula/verification/blob/main/LVS/rule_file_struc.png)
   1. `_xt018_1243_` : A template has been provided [rulefile1](https://github.com/prachi-mrudula/verification/blob/main/LVS/_xt018_1243_temp)
-  2. `xt018_1243` : A template has been provided 
+  2. `xt018_1243` : A template has been provided [rulefile1](
 ## Command Line LVS( nmLVS and nmLVS-H)
 * General format for running LVS:
 ``` bash
