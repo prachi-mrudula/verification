@@ -239,7 +239,8 @@ calibre -lvs -hier <rulefile>
           |------|------------------------------------|----------------------------------------------------|
           | Length | 4.75878              |   4.75878                             |
           | Width  | 2.51341  | 6.0825 |
-         Formula for number of bends:-
+         
+      * Formula for number of bends:-
          ```bash
            width(with bends) = width(without bends) - (0.5 * no. of bends * length)
          => 2.52341 = 6.0825 -(0.5 * no. of bends * 4.75878)
@@ -254,7 +255,8 @@ calibre -lvs -hier <rulefile>
           |------|------------------------------------|----------------------------------------------------|
           | Length | 61.1674              |   63.1674                             |
           | Width  | 2.0  | 2.0 |
-         Formula for number of bends:-
+         
+       * Formula for number of bends:-
          ```bash
            length(with bends) = length(without bends) - (0.5 * no. of bends * width)
          => 61.1674 = 63.1674 -(0.5 * no. of bends * 2.0)
