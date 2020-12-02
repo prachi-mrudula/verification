@@ -83,7 +83,14 @@ mkdir {DRC,LVS,PEX}
   * The rule file was written by deducting from the main rule file and then netlisting and LVS verification were performed.
   The rule file has a MACRO section init to calculate `W and L` of resistor. So, to get an insight into MACRO, the following exercises were done:
   2. Macro for rectangular shaped resistor using perimeter function which has no bends: - [Res_macro] 
-  3. Macro for resistor having serpentine 90 shape which has bends: -
-  *
+  3. Macro for resistor having serpentine 90 shape which has bends: - [ser_90_res]
+  * Netlisting and LVS were performed.
+  * Verified modified Macro definition with bends function included using perimeter function instead of area.
+  * Calculated the percentage error of length calculation from macro definition between:
+   | macro definition considering bends | macro definition without considering bends(simple) |
+   |------------------------------------|----------------------------------------------------|
+   | Length:- 0.00030762m                |  Length:- 0.00031562m                               |
+   when `Resistance = 50k ohm`, `Width = 2um`, `No. of bends:- 8`, `No. of strips:- 5`.
+   Thus, **% error = 2.6%** {((0.0031562-0.0030762)/0.0030762) * 100}
   
   
