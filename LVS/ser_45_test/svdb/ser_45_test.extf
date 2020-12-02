@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1606914329 1606914329
+lvs_ExtOutFile RUNDIR /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/verification/LVS/ser_45_test
+lvs_ExtOutFile RULES_FILE rule_file
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST svdb/ser_45_test.sp
+lvs_ExtOutFile EXTRACTION_REPORT ser_45_test.lvs.report.ext

@@ -1,0 +1,10 @@
+** CALIBRE SOURCE NETLIST **
+** CALIBRE VERSION: v2020.2_14.12    Thu Apr 2 15:39:27 PDT 2020
+** SOURCE NAME: /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/verification/ser_90_test/ser_res_test.src.net (ser_res_test)
+** NETLIST FILE: netlistSOURCE
+** GENERATED: Wed Dec  2 16:07:15 2020
+
+
+.SUBCKT ser_res_test A B 
+RRR1 A B RNP1 
+.ENDS

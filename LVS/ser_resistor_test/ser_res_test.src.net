@@ -1,0 +1,28 @@
+* SPICE export by:      S-Edit 2020.1.4
+* Export time:          Sat Nov 28 16:37:52 2020
+* Design path:          /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/lib.defs
+* Library:              my_lib
+* Cell:                 ser_res_test1
+* Testbench:            Spice
+* View:                 schematic
+* Export as:            subcircuit definition
+* Export mode:          hierarchical
+* Exclude empty:        no
+* Exclude .model:       no
+* Exclude .hdl:         no
+* Exclude .end:         no
+* Expand paths:         no
+* Wrap lines:           no
+* Exclude simulator commands:  no
+* Exclude global pins:         no
+* Exclude instance locations:  no
+* Control property name(s):    CDL
+
+*************** Subcircuits ***************
+.subckt ser_res_test1 A B C D 
+RR1 A B 60365.3 $[rnp1] $w=2e-05 $l=0.00387656 m=1 $ $x=870 $y=600 $w=20 $h=60
+RR2 C D 60365.3 $[rnp1] $w=2e-05 $l=0.00387656 m=1 $ $x=1090 $y=590 $w=20 $h=60
+.ends
+
+
+

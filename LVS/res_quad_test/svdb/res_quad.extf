@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1606735556 1606735556
+lvs_ExtOutFile RUNDIR /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/verification_test/res_quad
+lvs_ExtOutFile RULES_FILE rule_file
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 2 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST res_quad.sp
+lvs_ExtOutFile EXTRACTION_REPORT res_quad.lvs.report.ext

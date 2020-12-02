@@ -1,0 +1,10 @@
+** CALIBRE LAYOUT NETLIST **
+** CALIBRE VERSION: v2020.2_14.12    Thu Apr 2 15:39:27 PDT 2020
+** LAYOUT NAME: res_test.calibre.db (res_test)
+** NETLIST FILE: netlistLAYOUT
+** GENERATED: Thu Nov 26 18:03:10 2020
+
+
+.SUBCKT res_test A B 
+RR0 A B RNP1 
+.ENDS
