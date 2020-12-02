@@ -83,17 +83,20 @@ mkdir {DRC,LVS,PEX}
       * The rule file was written by deducting from the main rule file and then netlisting and LVS verification were performed.
   The rule file has a MACRO section init to calculate `W and L` of resistor. So, to get an insight into MACRO, the following exercises(2 and 3) were done:
   2. Macro for rectangular shaped resistor using perimeter function which has no bends: - [Res_macro] 
-  3. Macro for resistor having serpentine 90 shape which has bends: - [ser_90_res]
+  3. Serpentine 90 shape resistor which has bends: - [ser_90_res]
       * Netlisting and LVS were performed.
       * Verified modified Macro definition with bends function included using perimeter function instead of area.
       * Calculated the percentage error of length calculation from macro definition between:
   
-        | macro definition considering bends | macro definition without considering bends(simple) |
-        |------------------------------------|----------------------------------------------------|
-        | Length:- 0.00030762m               |  Length:- 0.00031562m                              |
+        |Paramter| macro definition considering bends(um) | macro definition without considering bends(simple)(um) |
+        |------|------------------------------------|----------------------------------------------------|
+        | Length | 307.62               |   315.62                             |
 
         when `Resistance = 50k ohm`, `Width = 2um`, `No. of bends:- 8`, `No. of strips:- 5`.
-      * Thus, **% error = 2.6%** {((0.0031562-0.0030762)/0.0030762) * 100}
+      * Thus, **% error = 2.6%** 
+          ``` bash 
+               error % = {((315.62-307.62)/307.62) * 100} 
+          ```
   The effect of strip length on parameters of resistor have been studied from the next example(4).
   4. Strip length comparison for serpentine 90 resistors:- [ser_res_test]
       * Two resistors (serpentine 90) with different strip lengths are netlisted and LVS performed.
@@ -115,9 +118,31 @@ mkdir {DRC,LVS,PEX}
       * The calibre.db is extracted by `File` -> `Export Mask Data` -> `GDSII` in the GUI Leditor and is further used as input when netlisting.
       * Since, its for rnp1, the src.net for rnp1  is copied from a previously run test folders and renamed as filename.src.net.
       * For calculating the number of bends, macro definition for area with and without bends are considered and thus the parameters noted down and calculated.
-        macro definition considering bends | macro definition without considering bends(simple) |
-        |------------------------------------|----------------------------------------------------|
-        | Length:- 0.00030762m               |  Length:- 0.00031562m                              |
+          |Paramter| macro definition considering bends(um) | macro definition without considering bends(simple)(um) |
+          |------|------------------------------------|----------------------------------------------------|
+          | Length | 4.75878              |   4.75878                             |
+          | Width  | 2.51341  | 6.0825 |
+         Formula for number of bends:-
+         ```bash
+           width(with bends) = width(without bends) - (0.5 * no. of bends * length)
+         => 2.52341 = 6.0825 -(0.5 * no. of bends * 4.75878)
+         => no. of bends = 1.5
+         ```
+   The number of bends calculated is verified by another example(6):-
+   6. Serpentine 45 resistor :- [ser_45_test]
+      * Netlisting and LVS were performed.
+      * Number of bends were calculated using the formula above and thus verified that 45 degree angle is being considered as bends = 0.5.
+          |Paramter| macro definition considering bends(um) | macro definition without considering bends(simple)(um) |
+          |------|------------------------------------|----------------------------------------------------|
+          | Length | 61.1674              |   63.1674                             |
+          | Width  | 2.0  | 2.0 |
+         Formula for number of bends:-
+         ```bash
+           length(with bends) = length(without bends) - (0.5 * no. of bends * width)
+         => 61.1674 = 63.1674 -(0.5 * no. of bends * 2.0)
+         => no. of bends = 2
+         ```
+  
    
   
   
