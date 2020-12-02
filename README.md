@@ -78,15 +78,15 @@ mkdir {DRC,LVS,PEX}
   * Click **Run LVS**.
   * If the run was successful, save the GUI settings to a file by clicking `File->Save Runset` in the LVS folder created before which can be loaded the next time.
   
-  # Examples
+# Examples
   1. Two-terminal device - [Resistor](https://github.com/prachi-mrudula/verification/tree/main/Resistor)
-  * The rule file was written by deducting from the main rule file and then netlisting and LVS verification were performed.
-  The rule file has a MACRO section init to calculate `W and L` of resistor. So, to get an insight into MACRO, the following exercises were done:
+      * The rule file was written by deducting from the main rule file and then netlisting and LVS verification were performed.
+  The rule file has a MACRO section init to calculate `W and L` of resistor. So, to get an insight into MACRO, the following exercises(2 and 3) were done:
   2. Macro for rectangular shaped resistor using perimeter function which has no bends: - [Res_macro] 
   3. Macro for resistor having serpentine 90 shape which has bends: - [ser_90_res]
-  * Netlisting and LVS were performed.
-  * Verified modified Macro definition with bends function included using perimeter function instead of area.
-  * Calculated the percentage error of length calculation from macro definition between:
+      * Netlisting and LVS were performed.
+      * Verified modified Macro definition with bends function included using perimeter function instead of area.
+      * Calculated the percentage error of length calculation from macro definition between:
   
 | macro definition considering bends | macro definition without considering bends(simple) |
 |------------------------------------|----------------------------------------------------|
@@ -94,5 +94,14 @@ mkdir {DRC,LVS,PEX}
 
 when `Resistance = 50k ohm`, `Width = 2um`, `No. of bends:- 8`, `No. of strips:- 5`.
    * Thus, **% error = 2.6%** {((0.0031562-0.0030762)/0.0030762) * 100}
+  The effect of strip length on parameters of resistor have been studied from the next example.
+  4. Strip length comparison for serpentine 90 resistors:- [ser_res_test]
+      * Two resistors (serpentine 90) with different strip lengths are netlisted and LVS performed.
+      * Permute the % error of lengths for both of these resistors considering with and without nends macro definition.
+      * Compare the error % obtained of both the resistors.
+        | macro definition considering bends | macro definition without considering bends(simple) |
+        |------------------------------------|----------------------------------------------------|
+        | Length:- 0.00030762m               |  Length:- 0.00031562m                              |
+   
   
   
