@@ -94,7 +94,7 @@ mkdir {DRC,LVS,PEX}
 
         when `Resistance = 50k ohm`, `Width = 2um`, `No. of bends:- 8`, `No. of strips:- 5`.
       * Thus, **% error = 2.6%** {((0.0031562-0.0030762)/0.0030762) * 100}
-  The effect of strip length on parameters of resistor have been studied from the next example.
+  The effect of strip length on parameters of resistor have been studied from the next example(4).
   4. Strip length comparison for serpentine 90 resistors:- [ser_res_test]
       * Two resistors (serpentine 90) with different strip lengths are netlisted and LVS performed.
       * Permute the % error of lengths for both of these resistors considering with and without nends macro definition.
@@ -105,6 +105,12 @@ mkdir {DRC,LVS,PEX}
         | Resistance     | 60.3653k ohm   | 60.3653k ohm    |
         | Strip Length   | 100um          | 461.56um        |
         | Width          | 20um           | 20um            |
-        | Length without bends | 0.00449656 | 0.00401656    | 
+        | Length considering no bends in macro definition| 0.00449656 | 0.00401656    | 
+        | Length considering bends in macro definition| 0.00387656 | 0.00387656    |
+        | % error        | 15.9%          | 3.6%            |
+       * Thus, **error is less in resistor with greater strip length**.
+   5. Custom resistor layout and netlisting :- [res_quad]
+      * 
+   
   
   
