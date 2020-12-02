@@ -132,6 +132,7 @@ mkdir {DRC,LVS,PEX}
          => no. of bends = 1.5
          ```
    The number of bends calculated is verified by another example(6):-
+   
    6. Serpentine 45 resistor :- [ser_45_test]
       * Netlisting and LVS were performed.
       * Number of bends were calculated using the formula above and thus verified that 45 degree angle is being considered as bends = 0.5.
