@@ -77,7 +77,53 @@ l    = ar/w
 Syntax: `CMACRO macro_name [arguments]`
    * `macro_name` must match its coresponding DMACRO definition.
    * `arguments` may be either a name of layer or numeric constant.
+   
+## **Writing MACRO Statements**
 
+This section shows the different ways to write MACRO statements. It includes macro statements to calculate W & L of a Resistor. Some inbuilt functions such as bends(), perimeter(), area(), perimeter_coincide() are used here.  
+
+- `bends`: Returns the total bends in the shapes of the specified pin or layer. The result is expressed in units of right angles.Bends value can be calculated by summing the angle in degrees, by which the perimeter changes direction at all concave vertices and dividing by 90 to convert to units of right angle bends.    
+Syntax: `BENDS(pin_or_layer)`  
+![Bends](https://github.com/prachi-mrudula/verification/blob/main/LVS/bends.png)
+
+- `perimeter` : Returns the total length of the perimeter of the shapes for the specified pin or layer.  
+Syntax: `PERIMETER(pin_or_layer)`    
+
+- `area` : Returns the total area of shapes that are part of the specified pin or layer.  
+Syntax: `AREA(pin_or_layer)`  
+
+- `perimeter_coincide` : Returns the total length of the parts of perimeters on the first pin or layer that coincide with the perimeter of the second pin or layer.  
+Syntax: `PERIMETER_COINSIDE(pin_or_layer, pin_or_layer)`  
+
+1. Macro Staement for a rectangular Poly-Resistor   
+```bash  
+DMACRO getWLRes seed {[
+property l, w
+pr   = perimeter(seed)
+w    = 0.5 * (perimeter_coincide(pos,seed) + (perimeter_coincide(neg,seed)))
+l    = (pr-2w)/2
+]}
+```  
+2. Macro Statment for Serpentaine 90 Poly-Resistor    
+2.1 Without Bends  
+```bash  
+DMACRO getWLRes seed {[
+property l, w
+pr   = perimeter(seed)
+w    = 0.5 * (perimeter_coincide(pos,seed) + (perimeter_coincide(neg,seed)))
+l    = (pr-2w)/2
+]}
+```  
+2.2 With Bends  
+```bash  
+DMACRO getWLRes seed {[
+property l, w
+n    = bends(seed)
+pr   = perimeter(seed)
+w    = 0.5 * (perimeter_coincide(pos,seed) + (perimeter_coincide(neg,seed)))
+l    = (0.5*pr)-(1+(0.5*n))*w
+]}  
+```  
 ## Command Line LVS( nmLVS and nmLVS-H)
 * General format for running LVS:
 ``` bash
@@ -183,7 +229,7 @@ calibre -lvs -hier <rulefile>
        * Thus, **error is less in resistor with greater strip length**.
        
    5. Custom resistor layout and netlisting :- [res_quad](https://github.com/prachi-mrudula/verification/tree/main/LVS/res_quad_test)
-      * The shape of the resistor is: [res_quad](https://github.com/prachi-mrudula/verification/blob/main/LVS/poly_res.png)
+      * The shape of the resistor is: ![res_quad](https://github.com/prachi-mrudula/verification/blob/main/LVS/poly_res.png)
       * The spice netlist of the poly resistor is generated after the layout passes DRC. 
       * The calibre.db is extracted by `File` -> `Export Mask Data` -> `GDSII` in the GUI Leditor and is further used as input when netlisting.
       * Since, its for rnp1, the src.net for rnp1  is copied from a previously run test folders and renamed as filename.src.net.
