@@ -5,4 +5,5 @@
 | res_test.src.net      |      netlist SOURCE       |
 | rule_file             |   res_test.lvs.report.ext |
 | xt018_1243            |   res_test.lvs.report     |
-| res_test.rul          |                           |
+| res_test.rul          |   svdb                    |
+| res_test_final.rul    |                           |
