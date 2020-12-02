@@ -146,11 +146,11 @@ calibre -lvs -hier <rulefile>
    * LVS comparison status (correct/incorrect)
 
 # Examples
-  1. Two-terminal device - [Resistor](https://github.com/prachi-mrudula/verification/tree/main/Resistor)
+  1. Two-terminal device - [Resistor](https://github.com/prachi-mrudula/verification/tree/main/LVS/Resistor)
       * The rule file was written by deducting from the main rule file and then netlisting and LVS verification were performed.
   The rule file has a MACRO section init to calculate `W and L` of resistor. So, to get an insight into MACRO, the following exercises(2 and 3) were done:
-  2. Macro for rectangular shaped resistor using perimeter function which has no bends: - [Res_macro] 
-  3. Serpentine 90 shape resistor which has bends: - [ser_90_res]
+  2. Macro for rectangular shaped resistor using perimeter function which has no bends: - [Res_macro](https://github.com/prachi-mrudula/verification/tree/main/LVS/res_macro)
+  3. Serpentine 90 shape resistor which has bends: - [ser_90_res](https://github.com/prachi-mrudula/verification/tree/main/LVS/ser_90_test)
       * Netlisting and LVS were performed.
       * Verified modified Macro definition with bends function included using perimeter function instead of area.
       * Calculated the percentage error of length calculation from macro definition between:
@@ -166,7 +166,7 @@ calibre -lvs -hier <rulefile>
           ```
   The effect of strip length on parameters of resistor have been studied from the next example(4).
   
-  4. Strip length comparison for serpentine 90 resistors:- [ser_res_test]
+  4. Strip length comparison for serpentine 90 resistors:- [ser_res_test](https://github.com/prachi-mrudula/verification/tree/main/LVS/ser_resistor_test)
       * Two resistors (serpentine 90) with different strip lengths are netlisted and LVS performed.
       * Permute the % error of lengths for both of these resistors considering with and without nends macro definition.
       * Compare the error % of length obtained for both the resistors.
@@ -182,8 +182,8 @@ calibre -lvs -hier <rulefile>
         
        * Thus, **error is less in resistor with greater strip length**.
        
-   5. Custom resistor layout and netlisting :- [res_quad]
-      * The shape of the resistor is: 
+   5. Custom resistor layout and netlisting :- [res_quad](https://github.com/prachi-mrudula/verification/tree/main/LVS/res_quad_test)
+      * The shape of the resistor is: [res_quad](https://github.com/prachi-mrudula/verification/blob/main/LVS/poly_res.png)
       * The spice netlist of the poly resistor is generated after the layout passes DRC. 
       * The calibre.db is extracted by `File` -> `Export Mask Data` -> `GDSII` in the GUI Leditor and is further used as input when netlisting.
       * Since, its for rnp1, the src.net for rnp1  is copied from a previously run test folders and renamed as filename.src.net.
@@ -200,7 +200,7 @@ calibre -lvs -hier <rulefile>
          ```
    The number of bends calculated is verified by another example(6):-
    
-   6. Serpentine 45 resistor :- [ser_45_test]
+   6. Serpentine 45 resistor :- [ser_45_test](https://github.com/prachi-mrudula/verification/tree/main/LVS/ser_45_test)
       * Netlisting and LVS were performed.
       * Number of bends were calculated using the formula above and thus verified that 45 degree angle is being considered as bends = 0.5.
           |Paramter| macro definition considering bends(um) | macro definition without considering bends(simple)(um) |
