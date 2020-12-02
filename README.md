@@ -80,3 +80,8 @@ mkdir {DRC,LVS,PEX}
   
   # Examples
   1. Two-terminal device - [Resistor](https://github.com/prachi-mrudula/verification/tree/main/Resistor)
+  * The rule file was written by deducting from the main rule file and then netlisting and LVS verification were performed.
+  The rule file has a MACRO section init to calculate `W and L` of resistor. So, to get an insight into MACRO, the following exercises were done:
+  2. Macro for rectangular shaped resistor using perimeter function which had no bends: - [Res_macro] 
+  
+  
