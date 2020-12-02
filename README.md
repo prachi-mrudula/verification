@@ -87,9 +87,10 @@ mkdir {DRC,LVS,PEX}
   * Netlisting and LVS were performed.
   * Verified modified Macro definition with bends function included using perimeter function instead of area.
   * Calculated the percentage error of length calculation from macro definition between:
-   | macro definition considering bends | macro definition without considering bends(simple) |
-   |------------------------------------|----------------------------------------------------|
-   | Length:- 0.00030762m                |  Length:- 0.00031562m                               |
+  
+| macro definition considering bends | macro definition without considering bends(simple) |
+|------------------------------------|----------------------------------------------------|
+| Length:- 0.00030762m               |  Length:- 0.00031562m                              |
    when `Resistance = 50k ohm`, `Width = 2um`, `No. of bends:- 8`, `No. of strips:- 5`.
    Thus, **% error = 2.6%** {((0.0031562-0.0030762)/0.0030762) * 100}
   
