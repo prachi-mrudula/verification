@@ -98,7 +98,7 @@ mkdir {DRC,LVS,PEX}
   4. Strip length comparison for serpentine 90 resistors:- [ser_res_test]
       * Two resistors (serpentine 90) with different strip lengths are netlisted and LVS performed.
       * Permute the % error of lengths for both of these resistors considering with and without nends macro definition.
-      * Compare the error % obtained of both the resistors.
+      * Compare the error % of length obtained for both the resistors.
         | Parameter      | 1st resistor   | 2nd resistor    |
         |----------------|----------------|-----------------|
         | No. of Strips  | 32             |  8              |
@@ -110,7 +110,14 @@ mkdir {DRC,LVS,PEX}
         | % error        | 15.9%          | 3.6%            |
        * Thus, **error is less in resistor with greater strip length**.
    5. Custom resistor layout and netlisting :- [res_quad]
-      * 
+      * The shape of the resistor is: 
+      * The spice netlist of the poly resistor is generated after the layout passes DRC. 
+      * The calibre.db is extracted by `File` -> `Export Mask Data` -> `GDSII` in the GUI Leditor and is further used as input when netlisting.
+      * Since, its for rnp1, the src.net for rnp1  is copied from a previously run test folders and renamed as filename.src.net.
+      * For calculating the number of bends, macro definition for area with and without bends are considered and thus the parameters noted down and calculated.
+        macro definition considering bends | macro definition without considering bends(simple) |
+        |------------------------------------|----------------------------------------------------|
+        | Length:- 0.00030762m               |  Length:- 0.00031562m                              |
    
   
   
