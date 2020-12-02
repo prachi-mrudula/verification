@@ -42,6 +42,42 @@ length (y-axis) of a rectangle, in user units.
   * `width_spacing length_spacing` : A pair of required, positive, floating-point numbers that indicate the width spacing (x-axis) and length spacing (y-axis), respectively, between rectangles. When you use this option, the spacing option cannot be used.
   * `INSIDE OF LAYER layer` : An optional keyword set that specifies a layer having polygons to be filled with rectangles. The layer indicates the name of an original or derived polygon layer.
   * Example: `thinmet_fill_all = RECTANGLES 5 2 2 INSIDE OF LAYER (EXTENT)`
+* CONNECT : Defines electrical connections on input layers.
+Syntax: `CONNECT <layer1> <layer2>......<layer N> BY <layer C>`
+   - `<layer1> <layer2>......<layer N>` are required original layers/layer sets or a derived polygon layers.
+   - `<layer C>` specifies a contact, cut or via layer.
+   - Example: `CONNECT p1trm m1trm BY CONT`
+* DMACRO: A MACRO definition is known as DMACRO. MACROS are used to make a sequence of computing instructions available to the programmer as a single program statement.
+Syntax:   `
+```bash
+DMACRO macro_name[arguments]
+         {
+         SVRF Code
+         }
+```
+   - Example:
+```bash
+DMACRO getWLRes seed {[
+property l, w
+weff = 0.5
+ar   = area(seed)
+w    = 0.5 * (perimeter_coincide(pos,seed) + (perimeter_coincide(neg,seed)))
+l    = ar/w
+        if (bends(seed) > 0)
+        {
+        if  (W > L)
+        w = w - weff*bends(seed) * l
+        else
+        l = l - weff*bends(seed) * w
+        }
+]}
+```
+   - `getWLRes` is the macro name which is used in the poly-resistor rule file.
+   - `seed` is the argument of the macro.
+* CMACRO: It is a keyword to invoke a macro.
+Syntax: `CMACRO macro_name [arguments]`
+   - `macro_name` must match its coresponding DMACRO definition.
+   - `arguments` may be either a name of layer or numeric constant.
 
 ## Command Line LVS( nmLVS and nmLVS-H)
 * General format for running LVS:
