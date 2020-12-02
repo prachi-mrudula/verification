@@ -229,7 +229,8 @@ calibre -lvs -hier <rulefile>
        * Thus, **error is less in resistor with greater strip length**.
        
    5. Custom resistor layout and netlisting :- [res_quad](https://github.com/prachi-mrudula/verification/tree/main/LVS/res_quad_test)
-      * The shape of the resistor is: ![res_quad](https://github.com/prachi-mrudula/verification/blob/main/LVS/poly_res.png)
+      * The shape of the resistor is: 
+      ![res_quad](https://github.com/prachi-mrudula/verification/blob/main/LVS/poly_res.png)
       * The spice netlist of the poly resistor is generated after the layout passes DRC. 
       * The calibre.db is extracted by `File` -> `Export Mask Data` -> `GDSII` in the GUI Leditor and is further used as input when netlisting.
       * Since, its for rnp1, the src.net for rnp1  is copied from a previously run test folders and renamed as filename.src.net.
