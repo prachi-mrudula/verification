@@ -264,7 +264,7 @@ calibre -lvs -hier <rulefile>
          => no. of bends = 2
          ```
          
-   7. Three terminal Device(Nwell resistor- rnw1) :- [rnw1](https://github.com/prachi-mrudula/verification/tree/main/LVS/rnw_test)
+   7. Three terminal Device(Nwell resistor- rnw1) :- [rnw_test](https://github.com/prachi-mrudula/verification/tree/main/LVS/rnw_test)
        * Rule file written for netlisting and performing LVS.
 
 
