@@ -263,6 +263,8 @@ calibre -lvs -hier <rulefile>
          => 61.1674 = 63.1674 -(0.5 * no. of bends * 2.0)
          => no. of bends = 2
          ```
-
+         
+   7. Three terminal Device(Nwell resistor- rnw1) :- [rnw1]()
+       * Rule file written for netlisting and performing LVS.
 
 
