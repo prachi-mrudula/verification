@@ -1,0 +1,10 @@
+** CALIBRE LAYOUT NETLIST **
+** CALIBRE VERSION: v2020.2_14.12    Thu Apr 2 15:39:27 PDT 2020
+** LAYOUT NAME: rnw_test.calibre.db (rnw_test)
+** NETLIST FILE: netlistLAYOUT
+** GENERATED: Thu Dec  3 17:26:22 2020
+
+
+.SUBCKT rnw_test C A B 
+RR0 A B RNW5 $SUB=C 
+.ENDS

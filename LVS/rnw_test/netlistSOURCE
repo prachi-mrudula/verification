@@ -1,0 +1,10 @@
+** CALIBRE SOURCE NETLIST **
+** CALIBRE VERSION: v2020.2_14.12    Thu Apr 2 15:39:27 PDT 2020
+** SOURCE NAME: /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/verification/LVS/rnw_test/rnw_test.src.net (rnw_test)
+** NETLIST FILE: netlistSOURCE
+** GENERATED: Thu Dec  3 17:26:22 2020
+
+
+.SUBCKT rnw_test A B C 
+RRR1 A B RNW5 $SUB=C 
+.ENDS

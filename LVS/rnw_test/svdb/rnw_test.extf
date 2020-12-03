@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1606996582 1606996582
+lvs_ExtOutFile RUNDIR /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/verification/LVS/rnw_test
+lvs_ExtOutFile RULES_FILE rule_file
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST svdb/rnw_test.sp
+lvs_ExtOutFile EXTRACTION_REPORT rnw_test.lvs.report.ext

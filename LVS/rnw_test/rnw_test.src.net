@@ -1,0 +1,27 @@
+* SPICE export by:      S-Edit 2020.1.4
+* Export time:          Tue Dec  1 11:55:58 2020
+* Design path:          /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/lib.defs
+* Library:              my_lib
+* Cell:                 rnw_test
+* Testbench:            Spice
+* View:                 schematic
+* Export as:            subcircuit definition
+* Export mode:          hierarchical
+* Exclude empty:        no
+* Exclude .model:       no
+* Exclude .hdl:         no
+* Exclude .end:         no
+* Expand paths:         no
+* Wrap lines:           no
+* Exclude simulator commands:  no
+* Exclude global pins:         no
+* Exclude instance locations:  no
+* Control property name(s):    CDL
+
+*************** Subcircuits ***************
+.subckt rnw_test A B C 
+RR1 A B 7234.69 $SUB=C $[rnw5] $w=2e-06 $l=1e-05 m=1 $ $x=655 $y=540 $w=30 $h=60
+.ends
+
+
+
