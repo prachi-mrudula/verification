@@ -42,7 +42,8 @@ length (y-axis) of a rectangle, in user units.
   * `width_spacing length_spacing` : A pair of required, positive, floating-point numbers that indicate the width spacing (x-axis) and length spacing (y-axis), respectively, between rectangles. When you use this option, the spacing option cannot be used.
   * `INSIDE OF LAYER layer` : An optional keyword set that specifies a layer having polygons to be filled with rectangles. The layer indicates the name of an original or derived polygon layer.
   * Example: `thinmet_fill_all = RECTANGLES 5 2 2 INSIDE OF LAYER (EXTENT)`
-* CONNECT : Defines electrical connections on input layers.
+* CONNECT : Defines electrical connections on input layers. Specifies electrical connections among layer1 and layerC objects, and the first available layer2 through layerN object, in that order. The layers specified as layer1 and layerC are connected when they have mutual area overlap with one of layer2 through layerN. The first object found from among layer2 through layerN at a given location participates in the connection; no other layers from that set become connected.
+
 Syntax: `CONNECT <layer1> <layer2>......<layer N> BY <layer C>`
    - `<layer1> <layer2>......<layer N>` are required original layers/layer sets or a derived polygon layers.
    - `<layer C>` specifies a contact, cut or via layer.
@@ -262,6 +263,8 @@ calibre -lvs -hier <rulefile>
          => 61.1674 = 63.1674 -(0.5 * no. of bends * 2.0)
          => no. of bends = 2
          ```
-
+         
+   7. Three terminal Device(Nwell resistor- rnw1) :- [rnw_test](https://github.com/prachi-mrudula/verification/tree/main/LVS/rnw_test)
+       * Rule file written for netlisting and performing LVS.
 
 
