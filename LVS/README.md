@@ -48,12 +48,16 @@ The LVS verification is done in Calibre using a SVRF(Standard Verification Rule 
        * layer2: A required original layer or layer set, or a derived polygon layer. Must appear as an input layer to a Connect or Sconnect operation.
     * Example:- `ATTACH MET1_TEXT m1trm ` :- attaches connectivity from metal1 text layer to a derived layer m1trm.
     
-* LVS BOX : Specifies cells whose contents are to be excluded from circuit comparison or circuit extraction,or both. Format: `LVS BOX [BLACK | GRAY [DEVICES]] [LAYOUT [ONLY]] [SOURCE]` where, `BLACK` is : An optional keyword that specifies only pin geometries of box cells are processed while other geometries in the cell are ignored by default. The specified box cells are processed independently of placement context, and the internal geometries of the box cells are unavailable for downstream processing. Netlisting of black box cell contents does not occur. The LVS Black Box Port specification statement is required when using this keyword.
+* LVS BOX : Specifies cells whose contents are to be excluded from circuit comparison or circuit extraction,or both. 
+   * Format: `LVS BOX [BLACK | GRAY [DEVICES]] [LAYOUT [ONLY]] [SOURCE]` where, 
+      * `BLACK` is : An optional keyword that specifies only pin geometries of box cells are processed while other geometries in the cell are ignored by default. The specified box cells are processed independently of placement context, and the internal geometries of the box cells are unavailable for downstream processing. Netlisting of black box cell contents does not occur. The LVS Black Box Port specification statement is required when using this keyword.
+      
 * LVS BLACK BOX PORT : Defines port objects for the LVS Box BLACK statement. Specifies that original_layer polygons belonging to an LVS Box BLACK cell, and intersecting with text_layer objects at the same hierarchical level, form cell ports. 
- Format: `LVS BLACK BOX PORT original_layer text_layer interconnect_layer`, where
-  * `original_layer` : A required original layer or layer set that forms a port for a black box cell. By default, these polygons are at the primary level of the box cell.
-  * `text_layer` : A required name of an original layer or layer set containing text objects that name ports for a black box cell. The text objects that name ports must intersect original_layer objects and be at the same hierarchical level as the original_layer objects in order to form box cell ports. By default, the text objects are at the primary level of the box cell. This layer must be a Text Layer argument in order for black box cell ports to be in the netlist.
-  * `interconnect_layer` : A required original layer or layer set, or a derived polygon layer, containing objects that connect to the original_layer outside of the black box cell. Connectivity must be established on this layer from a Connect or Sconnect statement.
+  * Format: `LVS BLACK BOX PORT original_layer text_layer interconnect_layer`, where
+    * `original_layer` : A required original layer or layer set that forms a port for a black box cell. By default, these polygons are at the primary level of the box cell.
+    * `text_layer` : A required name of an original layer or layer set containing text objects that name ports for a black box cell. The text objects that name ports must intersect original_layer objects and be at the same hierarchical level as the original_layer objects in order to form box cell ports. By default, the text objects are at the primary level of the box cell. This layer must be a Text Layer argument in order for black box cell ports to be in the netlist.
+    * `interconnect_layer` : A required original layer or layer set, or a derived polygon layer, containing objects that connect to the original_layer outside of the black box cell. Connectivity must be established on this layer from a Connect or Sconnect statement.
+   * Example:- `LVS BLACK BOX PORT met1_dg MET1_TEXT m1trm` 
   
 * RECTANGLES : Generates an output layer consisting of an array of rectangles with the specified dimensions and spacing. 
    * Format: `RECTANGLES width length {spacing | {width_spacing length_spacing}} {INSIDE OF LAYER layer}`, where
@@ -67,7 +71,7 @@ The LVS verification is done in Calibre using a SVRF(Standard Verification Rule 
    * Format: `CONNECT <layer1> <layer2>......<layer N> BY <layer C>`
      * `<layer1> <layer2>......<layer N>` are required original layers/layer sets or a derived polygon layers.
      * `<layer C>` specifies a contact, cut or via layer.
-   * Example: `CONNECT p1trm m1trm BY CONT`
+   * Example: `CONNECT p1trm m1trm BY CONT` - p1trm is the topmost layer connected to m1trm through contact layer.
    
 * DMACRO: A MACRO definition is known as DMACRO. MACROS are used to make a sequence of computing instructions available to the programmer as a single program statement. Syntax:   
 ```bash
