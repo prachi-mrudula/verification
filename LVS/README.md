@@ -269,5 +269,8 @@ calibre -lvs -hier <rulefile>
        
    8. Four-terminal device(1.8V PMOS-pe) :- [pe_test](https://github.com/prachi-mrudula/verification/tree/main/LVS/pe_test)
        * Rule file written for netlisting and performing LVS. 
+       
+   9. Four-terminal device(5.0V NMOS-ne5) :- [ne5_test](https://github.com/prachi-mrudula/verification/tree/main/LVS/ne5_test)
+       * Rule file written for netlisting and performing LVS. 
 
 
