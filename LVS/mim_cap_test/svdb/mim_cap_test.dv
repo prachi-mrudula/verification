@@ -1,0 +1,6 @@
+# CALIBRE-LVS DISCREPANCY VIEWER TCL FILE 
+# FILE: svdb/mim_cap_test.dv
+dv_start matched                                  
+dv_cell {mim_cap_test} {mim_cap_test} matched
+dv_obj_count -transformed_nets {2 2} -transformed_inst {1 1} -transformed_port {2 2}
+dv_end

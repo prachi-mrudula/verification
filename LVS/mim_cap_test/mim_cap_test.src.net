@@ -1,0 +1,27 @@
+* SPICE export by:      S-Edit 2020.1.4
+* Export time:          Wed Dec  9 10:37:19 2020
+* Design path:          /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/lib.defs
+* Library:              my_lib
+* Cell:                 mim_cap_test
+* Testbench:            Spice
+* View:                 schematic
+* Export as:            subcircuit definition
+* Export mode:          hierarchical
+* Exclude empty:        no
+* Exclude .model:       no
+* Exclude .hdl:         no
+* Exclude .end:         no
+* Expand paths:         no
+* Wrap lines:           no
+* Exclude simulator commands:  no
+* Exclude global pins:         no
+* Exclude instance locations:  no
+* Control property name(s):    CDL
+
+*************** Subcircuits ***************
+.subckt mim_cap_test A B 
+CC2 A B $[cmmh4] area=4e-10 perimeter=8e-05 m=1 $ $x=640 $y=580 $w=20 $h=60
+.ends
+
+
+

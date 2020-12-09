@@ -1,0 +1,144 @@
+//------------------------------------------------------------
+//             Setup Environment
+//------------------------------------------------------------
+
+PRECISION  1000
+RESOLUTION 5
+
+UNIT CAPACITANCE FF
+UNIT LENGTH      U
+UNIT RESISTANCE  OHM
+
+MASK RESULTS DATABASE "mask.db"
+FLAG OFFGRID YES
+FLAG ACUTE YES
+FLAG SKEW YES
+FLAG NONSIMPLE YES
+FLAG NONSIMPLE PATH YES
+
+TEXT DEPTH PRIMARY
+
+LAYOUT PROCESS BOX RECORD YES
+
+//------------------------------------------------------------
+//         Setup Defaults for LVS
+//------------------------------------------------------------
+
+MASK SVDB DIRECTORY svdb XCALIBRE
+
+LVS REPORT                       "lvs.rep"
+LVS REPORT OPTION                S
+LVS POWER NAME                   VDD? DVDD VCC VDDA VDDB ADVDD VDDM
+LVS GROUND NAME                  GND? DVSS VSS GROUND AGND DGND VSSM
+LVS ABORT ON SUPPLY ERROR        NO
+LVS ALL CAPACITOR PINS SWAPPABLE NO
+LVS PIN NAME PROPERTY PHY_PIN    PIN
+LVS COMPONENT SUBTYPE PROPERTY   LVS_SUBTYPE
+LVS COMPONENT TYPE PROPERTY      LVS_TYPE
+LVS FILTER UNUSED BIPOLAR        NO
+LVS FILTER UNUSED MOS            NO
+LVS FILTER UNUSED RESISTORS      NO
+LVS FILTER UNUSED DIODES         NO
+LVS FILTER UNUSED CAPACITORS     NO
+LVS IGNORE PORTS                 NO
+LVS RECOGNIZE GATES              NONE
+LVS REDUCE PARALLEL BIPOLAR      NO
+LVS REDUCE PARALLEL CAPACITORS   NO
+LVS REDUCE SERIES   MOS          NO
+LVS REDUCE SPLIT    GATES        NO
+LVS REDUCE PARALLEL RESISTORS    NO
+LVS REDUCE SERIES CAPACITORS     NO
+LVS REDUCE SERIES RESISTORS      NO
+LVS REPORT MAXIMUM               100
+LVS PROPERTY RESOLUTION MAXIMUM  1000
+LVS SPICE REPLICATE DEVICES      YES
+LVS SPICE MULTIPLIER NAME       "M"
+LVS INJECT LOGIC                 NO
+LVS CHECK PORT NAMES             YES
+
+LVS WRITE LAYOUT NETLIST         "netlistLAYOUT"
+LVS WRITE SOURCE NETLIST         "netlistSOURCE"
+
+
+//------------------------------------------------------------
+//            INPUT-LAYERS
+//------------------------------------------------------------
+// LAYER : Defines the name of an original layer or a layer set that Calibre uses. 
+//         LAYER name original_layer
+// LAYER MAP: Enables Calibre to map layer numbers, DATATYPE attributes, and TEXTTYPE attributes in GDS and OASIS databases to layer numbers that Calibre uses in the rule file.
+//        LAYER MAP source_layer DATATYPE/TEXTTYPE source_type target_layer 
+
+LAYER MAP  28     DATATYPE  0 50280
+LAYER MAP  28     DATATYPE  9 50289
+LAYER met3_dg     50280 50289                                           // M3, Metal3
+LAYER MAP  29     DATATYPE  0 50290     LAYER via3        50290         // V3, Via3
+LAYER MAP  31     DATATYPE  0 50310
+LAYER MAP  31     DATATYPE  9 50319
+LAYER met4_dg     50310 50319                                           //  M4, Metal4
+LAYER MAP  13     DATATYPE  0 50130
+LAYER MAP  118    DATATYPE  0 51180	LAYER capmh34f    51180
+LAYER MAP  15     DATATYPE  0 50150     LAYER cont        50150         // CT, Contact
+LAYER MAP   7     DATATYPE  0 50070     LAYER pimp        50070         // IP, P+ Implant
+LAYER MAP  16     DATATYPE  0 50160
+LAYER MAP  16     DATATYPE  9 50169
+LAYER met1_dg     50160 50169                                           // M1, Metal1
+LAYER MAP   3     DATATYPE  0 50030
+LAYER diff_dg     50030                                                 // DF, Active Area
+
+//LVS TEXT LAYER
+LAYER MAP  16 TEXTTYPE  3 50163	   LAYER MET1_TEXT   50163
+LAYER MAP  28 TEXTTYPE  3 50283    LAYER MET3_TEXT   50283
+LAYER MAP  31 TEXTTYPE  3 50313    LAYER MET4_TEXT   50313
+
+
+// TEXT LAYER : Specifies the layers in the layout database from which text is read for connectivity extraction.
+// PORT LAYER TEXT : Causes Port Layer Text objects on the specified layer(s) to be read and treated as top-level ports in geometric databases.
+// ATTACH : attaches connectivity information from a layer1 object to a layer2 object. It is used for naming nets and ports.
+//       ATTACH A B
+//        where A is a Text Layer argument (or A is a layer set that contains the label layer), then
+//        the connectivity extractor looks for a polygon on layer B that intersects the label
+//        location. If found, the label name is assigned to the net that contains that polygon.
+
+PORT LAYER TEXT MET3_TEXT MET4_TEXT
+ATTACH MET3_TEXT  m3trm
+ATTACH MET4_TEXT  m4trm
+
+
+PORT LAYER TEXT  MET1_TEXT 
+ATTACH MET1_TEXT    m1trm
+
+
+//............................................................................
+
+met1 = copy met1_dg      // Metal1 definition
+met3 = copy met3_dg
+met4 = copy met4_dg
+cmimh34f = (capmh34f AND met3) AND met4
+m1trm = copy met1
+m3trm = copy met3
+m4trm = copy met4
+pdiff = diff_dg AND pimp
+diff = copy diff_dg      // Diffusion definition 
+
+
+//------------------------------------------------------------
+//            Layer Connections
+//------------------------------------------------------------
+
+CONNECT m1trm pdiff BY cont
+CONNECT  m4trm capmh34f m3trm BY via3
+
+//------------------------------------------------------------
+//       Intentional devices definitions
+//------------------------------------------------------------
+
+DEVICE C(cmmh4)     cmimh34f capmh34f  m3trm   NETLIST ELEMENT XC CMACRO getAreaPeriCap cmimh34f
+
+DMACRO getAreaPeriCap seed {[
+property "AREA", "PERIMETER"
+   "AREA"      = AREA(seed)
+   "PERIMETER" = PERIM(seed)
+]}
+
+
+

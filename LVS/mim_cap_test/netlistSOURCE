@@ -1,0 +1,10 @@
+** CALIBRE SOURCE NETLIST **
+** CALIBRE VERSION: v2020.2_14.12    Thu Apr 2 15:39:27 PDT 2020
+** SOURCE NAME: /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/verification/LVS/mim_cap_test/mim_cap_test.src.net (mim_cap_test)
+** NETLIST FILE: netlistSOURCE
+** GENERATED: Wed Dec  9 11:47:58 2020
+
+
+.SUBCKT mim_cap_test A B 
+CCC2 A B CMMH4 
+.ENDS
