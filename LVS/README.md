@@ -266,5 +266,8 @@ calibre -lvs -hier <rulefile>
          
    7. Three terminal Device(Nwell resistor- rnw1) :- [rnw_test](https://github.com/prachi-mrudula/verification/tree/main/LVS/rnw_test)
        * Rule file written for netlisting and performing LVS.
+       
+   8. Four-terminal device(1.8V PMOS-pe) :- [pe_test](https://github.com/prachi-mrudula/verification/tree/main/LVS/pe_test)
+       * Rule file written for netlisting and performing LVS. 
 
 
