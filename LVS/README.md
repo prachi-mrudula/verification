@@ -17,9 +17,10 @@ The LVS verification is done in Calibre using a SVRF(Standard Verification Rule 
   2. `xt018_1243` : A template has been provided [rulefile2](https://github.com/prachi-mrudula/verification/blob/main/LVS/xt018_1243_temp)
   3. `xt018.rul` : This is the main rule file containing all the layer and device definitions, layer operations, rule checks, connectivity information and setup defaults. Information on the commands used are provided in the next section.
 ### Commands used in rule file:
-* LAYER: Defines the name of an original layer or a layer set that Calibre uses. Format:- `LAYER name original_layer` where,
-   * `name`: A required name for an original layer or layer set. 
-   * `original_layer`: The layer number of an original layer. 
+* LAYER: Defines the name of an original layer or a layer set that Calibre uses. 
+   * Format:- `LAYER name original_layer` where,
+      * `name`: A required name for an original layer or layer set. 
+      * `original_layer`: The layer number of an original layer. 
 * LAYER MAP: Enables Calibre to map layer numbers, DATATYPE attributes, and TEXTTYPE attributes in GDS and OASIS databases to layer numbers that Calibre uses in the rule file. Format: `LAYER MAP source_layer DATATYPE/TEXTTYPE source_type target_layer`
    * `source_layer` : The layer number in layout database for mapping.
    * `DATATYPE`: This maps drawn geometric layers.
