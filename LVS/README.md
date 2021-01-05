@@ -304,5 +304,5 @@ calibre -lvs -hier <rulefile>
    11. BJT(qpva5) :- 
        * Rule file written for netlisting.
        
-   12. Inverter :- [inv_test](https://github.com/prachi-mrudula/verification/tree/main/LVS/inv_test]
+   12. Inverter :- [inv_test](https://github.com/prachi-mrudula/verification/tree/main/LVS/inv_test)
        * Rule file written for netlisting and performing LVS.
