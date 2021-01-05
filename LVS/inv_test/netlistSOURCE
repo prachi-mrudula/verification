@@ -1,0 +1,11 @@
+** CALIBRE SOURCE NETLIST **
+** CALIBRE VERSION: v2020.2_14.12    Thu Apr 2 15:39:27 PDT 2020
+** SOURCE NAME: /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/verification/LVS/inv_test/inv_test.src.net (inv_test)
+** NETLIST FILE: netlistSOURCE
+** GENERATED: Tue Jan  5 12:14:13 2021
+
+
+.SUBCKT inv_test GND IN OUT VDD 
+MMM1 OUT IN VDD VDD PE 
+MMM2 OUT IN GND GND NE 
+.ENDS

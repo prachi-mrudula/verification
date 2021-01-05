@@ -1,0 +1,26 @@
+inv_test 1000
+SOFTCHK nwtrm CONTACT.
+0 0 0 Jan  5 11:57:32 2021                                                      
+SOFTCHK bulk CONTACT.
+3 3 2 Jan  5 11:57:32 2021                                                      
+Net 3 is selected for stamping.
+Rejected nets: 2 4
+p 1 4
+CN inv_test c 1 0 0 1 0 0 0
+DN 2
+2550 -2640
+3010 -2640
+3010 -2180
+2550 -2180
+p 2 4
+DN 4
+3290 3370
+3770 3370
+3770 5370
+3290 5370
+p 3 4
+DN 2
+3390 -2640
+3850 -2640
+3850 -2180
+3390 -2180
