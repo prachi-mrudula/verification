@@ -80,6 +80,41 @@ The LVS verification is done in Calibre using a SVRF(Standard Verification Rule 
       * `BY contact_layer` The keyword BY must always precede the name of this contact layer. There can be only one BY keyword per Sconnect operation.
    * Example: `SCONNECT pdiff bulk BY ptap`
    
+A bunch of commands are used to perform the layer operations. Some of them are mentioned below:
+* AND : Constructs the intersection regions of polygons on the input layer(s) and outputs the intersections as polygons.
+  * Format : Single layer syntax: `AND layer1 [constraint]`
+             Two-layer syntax: `AND layer2 layer3` 
+  * Example : Some examples are:
+     * ![AND_single_layer]()
+     * ![AND_multiple_layers]()
+* OR : Merges all intersecting polygons on the input layers into single polygons.
+  * Format : Single layer syntax: `OR layer1 [constraint]`
+             Two-layer syntax: `OR layer2 layer3`
+  * Example: More insight can be obtained from the following diagram:
+     * ![OR]() 
+* NOT : Two-layer Boolean operation that selects polygon areas not common to polygons from a second layer.
+  * Format : `NOT layer1 layer2`
+  * Example: An image has been provided as an example:
+     * ![NOT]() 
+* CUT : Selects polygons that share some, but not all of their area with polygons from a second layer. 
+  * Format : `CUT layer1 layer2 [constraint [BY NET] [EVEN | ODD]]` where
+     * `layer1, layer2` The layers derived or original.
+     * `constraint` This constraint specifies the number of layer2 polygons or nets that a layer1 polygon must share some (but not all) of its area with to be selected by the Cut operation. The constraint must contain non-negative integers.
+     * `BY NET` specifies that a layer1 polygon is selected when a number of distinct nets in the set of layer2 polygons, which share some of their area with the layer1 polygon, meets the specified constraint. 
+     * `EVEN | ODD` A layer1 polygon is selected if the number of layer2 polygons that meet the constraint is also an even number/odd number respectively. 
+  * Example : Following are some examples to explain more about the command.
+     * ![CUT_1]()
+     * ![CUT_2]()
+* AREA : Selects polygons that meet an area constraint.
+  * Format : `AREA layer constraint`
+  * Example: 
+     * ![AREA]() 
+* EXTENT : Generates a derived polygon layer consisting of one rectangle that equals the database extent read in at runtime, including text. If you specify the optional layer parameter, the rectangle represents the minimum bounding box of all objects on layer. In hierarchical mode, Calibre may choose to divide the extent rectangle into polygons that are distributed across the hierarchy to facilitate more efficient processing of subsequent operations.
+  * 
+* HOLES : Constructs a derived polygon layer of polygons that fit inside of holes in polygons from the input layer. Forms a layer consisting of all polygons that fit exactly inside of layer polygon holes. 
+
+ 
+
 * DMACRO: A MACRO definition is known as DMACRO. MACROS are used to make a sequence of computing instructions available to the programmer as a single program statement. Syntax:   
 ```bash
 DMACRO macro_name[arguments]
