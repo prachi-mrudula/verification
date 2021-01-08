@@ -301,7 +301,7 @@ calibre -lvs -hier <rulefile>
    10. Capacitor(MIM - cmm4h) :- [mim_cap_test](https://github.com/prachi-mrudula/verification/tree/main/LVS/mim_cap_test)
        * Rule file written for netlisting and performing LVS.
      
-   11. BJT(qpva5) :- 
+   11. BJT(qpva5) :- [qpva5](https://github.com/prachi-mrudula/verification/tree/main/LVS/qpva5)
        * Rule file written for netlisting.
        
    12. Inverter :- [inv_test](https://github.com/prachi-mrudula/verification/tree/main/LVS/inv_test)
