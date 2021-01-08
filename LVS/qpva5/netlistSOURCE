@@ -1,0 +1,10 @@
+** CALIBRE SOURCE NETLIST **
+** CALIBRE VERSION: v2020.2_14.12    Thu Apr 2 15:39:27 PDT 2020
+** SOURCE NAME: /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/verification/LVS/qpva5/qpva5.src.net (qpva5)
+** NETLIST FILE: netlistSOURCE
+** GENERATED: Fri Jan  8 18:38:35 2021
+
+
+.SUBCKT qpva5 B C E 
+QQ0 E B C QPVA5 
+.ENDS

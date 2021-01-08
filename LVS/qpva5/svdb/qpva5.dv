@@ -1,0 +1,15 @@
+# CALIBRE-LVS DISCREPANCY VIEWER TCL FILE 
+# FILE: svdb/qpva5.dv
+dv_start unmatched                                
+dv_cell {qpva5} {qpva5} unmatched
+dv_obj_count -transformed_nets {3 3} -transformed_inst {1 1} -transformed_port {0 3}
+dv_discrep 1 {Incorrect Ports}
+dv_discrep_line {** missing port **                                        } -sport {B} { on net: } -snet {B} {}
+dv_discrep_line {}
+dv_discrep 2 {Incorrect Ports}
+dv_discrep_line {** missing port **                                        } -sport {C} { on net: } -snet {C} {}
+dv_discrep_line {}
+dv_discrep 3 {Incorrect Ports}
+dv_discrep_line {** missing port **                                        } -sport {E} { on net: } -snet {E} {}
+dv_discrep_line {}
+dv_end

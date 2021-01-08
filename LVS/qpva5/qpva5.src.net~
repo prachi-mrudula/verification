@@ -1,0 +1,27 @@
+* SPICE export by:      S-Edit 2020.1.4
+* Export time:          Sat Dec 19 18:53:32 2020
+* Design path:          /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/lib.defs
+* Library:              practice
+* Cell:                 qpva5
+* Testbench:            Spice
+* View:                 schematic
+* Export as:            subcircuit definition
+* Export mode:          hierarchical
+* Exclude empty:        no
+* Exclude .model:       yes
+* Exclude .hdl:         no
+* Exclude .end:         no
+* Expand paths:         yes
+* Wrap lines:           80 characters
+* Exclude simulator commands:  no
+* Exclude global pins:         no
+* Exclude instance locations:  no
+* Control property name(s):    SPICE
+
+*************** Subcircuits ***************
+.subckt qpva5 B C E 
+XQ0 E B C qpva5 m=1 par1=1 $ $x=550 $y=-190 $w=40 $h=60
+.ends
+
+
+
