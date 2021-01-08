@@ -110,7 +110,17 @@ A bunch of commands are used to perform the layer operations. Some of them are m
   * Example: 
      * ![AREA]() 
 * EXTENT : Generates a derived polygon layer consisting of one rectangle that equals the database extent read in at runtime, including text. If you specify the optional layer parameter, the rectangle represents the minimum bounding box of all objects on layer. In hierarchical mode, Calibre may choose to divide the extent rectangle into polygons that are distributed across the hierarchy to facilitate more efficient processing of subsequent operations.
-  * 
+  * Format : `EXTENT [layer]` where layer is an optional layer to be added to the command.
+  * Example: The first example uses `EXTENT layer`
+     * ![EXTENT_1]()
+     * The second example uses only `EXTENT`. The following figure shows a layout with a derived layer called bulk. Assume a simple rule file as follows:
+         * Layer nwell 1
+         * Layer poly 2
+         * Layer met 3 // not needed in the run
+         * bulk = EXTENT
+         * rule {copy poly copy nwell}
+         * Note that layer met plays no role in deriving bulk in this rule file, because met is not needed in a rule check.
+     * ![EXTENT_2]()
 * HOLES : Constructs a derived polygon layer of polygons that fit inside of holes in polygons from the input layer. Forms a layer consisting of all polygons that fit exactly inside of layer polygon holes. 
 
  
