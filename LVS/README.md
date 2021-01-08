@@ -73,6 +73,13 @@ The LVS verification is done in Calibre using a SVRF(Standard Verification Rule 
      * `<layer C>` specifies a contact, cut or via layer.
    * Example: `CONNECT p1trm m1trm BY CONT` - p1trm is the topmost layer connected to m1trm through contact layer.
    
+* SCONNECT : Specifies one-directional connection between objects on specified layers. Passes connectivity from the upper_layer polygons to lower_layer polygons. Connections are unidirectional; nodal information is passed from upper_layer to lower_layer, but not in the other direction. Connectivity information is passed from upper_layer objects to lower_layer objects, through contact_layer objects. The lower_layer objects must have overlapping area common to both upper_layer and contact_layer objects. That is, polygons from all three of these layers must have a mutual intersection in order for connectivity to be passed.
+    * Format: `SCONNECT upper_layer lower_layer [lower_layer ...] {BY contact_layer}`
+      * `upper_layer` A required original layer or layer set, or a derived polygon layer. The layer must carry nodal information.
+      * `lower_layer`  can specify a maximum of 32 of these layers in a single statement. Any layer specified as a lower_layer cannot simultaneously be a contact_layer in any Sconnect operation. Any lower_layer may be specified as a lower_layer in a different Sconnect operation. 
+      * `BY contact_layer` The keyword BY must always precede the name of this contact layer. There can be only one BY keyword per Sconnect operation.
+   * Example: `SCONNECT pdiff bulk BY ptap`
+   
 * DMACRO: A MACRO definition is known as DMACRO. MACROS are used to make a sequence of computing instructions available to the programmer as a single program statement. Syntax:   
 ```bash
 DMACRO macro_name[arguments]
