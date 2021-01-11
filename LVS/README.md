@@ -130,8 +130,13 @@ A bunch of commands are used to perform the layer operations. Some of them are m
        ![EXTENT_2](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/EXTENT_2.png)
      
 * HOLES : Constructs a derived polygon layer of polygons that fit inside of holes in polygons from the input layer. Forms a layer consisting of all polygons that fit exactly inside of layer polygon holes. 
-
- 
+  * Format : `HOLES layer [constraint] [INNER]` 
+  * Example : Specifically, holes within holes are merged as in the following figure :
+     ![HOLES_1](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/HOLES_1.png)
+     
+     *  In the following figure that only the innermost hole is merged and output. INNER finds the innermost hole that lies within other holes:
+     ![HOLES_2](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/HOLES_2.png)
+     
 
 * DMACRO: A MACRO definition is known as DMACRO. MACROS are used to make a sequence of computing instructions available to the programmer as a single program statement. Syntax:   
 ```bash
