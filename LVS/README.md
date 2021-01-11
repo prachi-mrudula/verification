@@ -134,7 +134,7 @@ A bunch of commands are used to perform the layer operations. Some of them are m
   * Example : Specifically, holes within holes are merged as in the following figure :
      ![HOLES_1](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/HOLES_1.png)
      
-     *  In the following figure that only the innermost hole is merged and output. INNER finds the innermost hole that lies within other holes:
+     * In the following figure that only the innermost hole is merged and output. INNER finds the innermost hole that lies within other holes:
      ![HOLES_2](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/HOLES_2.png)
      
 
