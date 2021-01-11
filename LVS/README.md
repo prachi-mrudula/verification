@@ -111,7 +111,8 @@ A bunch of commands are used to perform the layer operations. Some of them are m
      
 * AREA : Selects polygons that meet an area constraint.
   * Format : `AREA layer constraint`
-  * Example: 
+  * Example:
+  
        ![AREA](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/AREA.png) 
      
 * EXTENT : Generates a derived polygon layer consisting of one rectangle that equals the database extent read in at runtime, including text. If you specify the optional layer parameter, the rectangle represents the minimum bounding box of all objects on layer. In hierarchical mode, Calibre may choose to divide the extent rectangle into polygons that are distributed across the hierarchy to facilitate more efficient processing of subsequent operations.
