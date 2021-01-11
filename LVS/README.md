@@ -87,15 +87,18 @@ A bunch of commands are used to perform the layer operations. Some of them are m
   * Example : Some examples are:
      * ![AND_single_layer](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/AND_1.png)
      * ![AND_multiple_layers](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/AND_2.png)
+     
 * OR : Merges all intersecting polygons on the input layers into single polygons.
   * Format : Single layer syntax: `OR layer1 [constraint]`
              Two-layer syntax: `OR layer2 layer3`
   * Example: More insight can be obtained from the following diagram:
      * ![OR](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/OR.png) 
+     
 * NOT : Two-layer Boolean operation that selects polygon areas not common to polygons from a second layer.
   * Format : `NOT layer1 layer2`
   * Example: An image has been provided as an example:
      * ![NOT](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/NOT.png) 
+     
 * CUT : Selects polygons that share some, but not all of their area with polygons from a second layer. 
   * Format : `CUT layer1 layer2 [constraint [BY NET] [EVEN | ODD]]` where
      * `layer1, layer2` The layers derived or original.
@@ -105,10 +108,12 @@ A bunch of commands are used to perform the layer operations. Some of them are m
   * Example : Following are some examples to explain more about the command.
      * ![CUT_1](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/CUT_1.png)
      * ![CUT_2](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/CUT_2.png)
+     
 * AREA : Selects polygons that meet an area constraint.
   * Format : `AREA layer constraint`
   * Example: 
      * ![AREA](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/AREA.png) 
+     
 * EXTENT : Generates a derived polygon layer consisting of one rectangle that equals the database extent read in at runtime, including text. If you specify the optional layer parameter, the rectangle represents the minimum bounding box of all objects on layer. In hierarchical mode, Calibre may choose to divide the extent rectangle into polygons that are distributed across the hierarchy to facilitate more efficient processing of subsequent operations.
   * Format : `EXTENT [layer]` where layer is an optional layer to be added to the command.
   * Example: The first example uses `EXTENT layer`
@@ -121,6 +126,7 @@ A bunch of commands are used to perform the layer operations. Some of them are m
          * rule {copy poly copy nwell}
          * Note that layer met plays no role in deriving bulk in this rule file, because met is not needed in a rule check.
      * ![EXTENT_2](https://github.com/prachi-mrudula/verification/blob/main/LVS/images/EXTENT_2.png)
+     
 * HOLES : Constructs a derived polygon layer of polygons that fit inside of holes in polygons from the input layer. Forms a layer consisting of all polygons that fit exactly inside of layer polygon holes. 
 
  
