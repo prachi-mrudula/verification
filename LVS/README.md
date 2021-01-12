@@ -140,8 +140,9 @@ A bunch of commands are used to perform the layer operations. Some of them are m
      
 * INSIDE : Selects all polygons that share all of their area with a polygon from a second layer.
   * Format : `INside layer1 layer2`
-  * Example : 
-        <img title="INSIDE" src="images/Inside.png" width="300" length="300">
+  * Example :
+  
+        <img title="INSIDE" src="images/Inside.png" width="400" length="400">
      
 
 * DMACRO: A MACRO definition is known as DMACRO. MACROS are used to make a sequence of computing instructions available to the programmer as a single program statement. Syntax:   
