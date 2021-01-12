@@ -141,7 +141,6 @@ A bunch of commands are used to perform the layer operations. Some of them are m
 * INSIDE : Selects all polygons that share all of their area with a polygon from a second layer.
   * Format : `INside layer1 layer2`
   * Example :
-  
         <img title="INSIDE" src="images/Inside.png" width="400" length="400">
      
 
