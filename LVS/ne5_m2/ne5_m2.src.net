@@ -1,0 +1,27 @@
+* SPICE export by:      S-Edit 2020.1.4
+* Export time:          Wed Mar 24 17:58:27 2021
+* Design path:          /home/NIS/projects/XT018-19/A0/work/tt18-pmrudula/lib.defs
+* Library:              my_lib
+* Cell:                 ne5_m2
+* Testbench:            Spice
+* View:                 schematic
+* Export as:            subcircuit definition
+* Export mode:          hierarchical
+* Exclude empty:        no
+* Exclude .model:       no
+* Exclude .hdl:         no
+* Exclude .end:         no
+* Expand paths:         no
+* Wrap lines:           no
+* Exclude simulator commands:  no
+* Exclude global pins:         no
+* Exclude instance locations:  no
+* Control property name(s):    CDL
+
+*************** Subcircuits ***************
+.subckt ne5_m2 B D G S 
+MM1 D G S B ne5 w=2e-06 l=5e-07 m=2 ad=5.4e-13 as=9.6e-13 pd=2.54e-06 ps=4.96e-06 nrd=0.135 nrs=0.135 $ $x=690 $y=580 $w=40 $h=60
+.ends
+
+
+
